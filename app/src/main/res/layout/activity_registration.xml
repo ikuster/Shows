@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <include android:id="@+id/toolbarRegistration"
+                 layout="@layout/toolbar"/>
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailRegLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarRegistration"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:theme="@style/Input"
+                app:errorEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailRegInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="E-mail"
+                    android:textSize="@dimen/textSize_3x"
+                    android:paddingBottom="@dimen/padding_3x"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordRegLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                app:layout_constraintTop_toBottomOf="@+id/emailRegLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:theme="@style/Input"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleDrawable="@drawable/ic_show_password"
+                app:passwordToggleTint="@color/colorAccent"
+        >
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordRegInput"
+                    style="@style/FullScreen.TextInputForms"
+                    android:hint="Password"
+                    android:inputType="textPassword"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordConfirmRegLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                app:layout_constraintTop_toBottomOf="@+id/passwordRegLayout"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:theme="@style/Input"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleDrawable="@drawable/ic_show_password"
+                app:passwordToggleTint="@color/colorAccent">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordConfirmRegInput"
+                    style="@style/FullScreen.TextInputForms"
+                    android:hint="Confirm password"
+                    android:inputType="textPassword"/>
+            <TextView android:id="@+id/errorRegister"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      app:layout_constraintTop_toBottomOf="@id/passwordConfirmRegLayout"
+                      app:layout_constraintLeft_toLeftOf="parent"
+                      app:layout_constraintRight_toRightOf="parent"
+                      android:visibility="invisible"
+                      android:textColor="@android:color/holo_red_dark"
+                      android:text="Placeholder"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <ProgressBar
+                android:id="@+id/loadingScreenRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/btnRegister"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/margin_6x"
+                android:visibility="gone"
+        />
+        <Button
+                android:id="@+id/btnRegister"
+                style="@style/FullScreen.Button"
+                app:layout_constraintTop_toBottomOf="@+id/passwordConfirmRegLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/margin_6x"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                android:text="REGISTER"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

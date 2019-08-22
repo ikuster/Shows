@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/addEpScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+android:layout_marginLeft="@dimen/margin_2x"
+android:layout_marginRight="@dimen/margin_2x">
+    <include android:id="@+id/toolbarAddEpisode"
+             layout="@layout/toolbar"/>
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addPhotoInputs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/leftGuide"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/episodeTitleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/seasonEpisodeLabel"
+                android:theme="@style/Input"
+                app:errorEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/episodeTitleInput"
+                    style="@style/FullScreen.TextInputForms"
+                    android:hint="Episode title"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView android:id="@+id/seasonEpisodeLabel"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@id/episodeTitleLayout"
+                  app:layout_constraintBottom_toTopOf="@id/seasonEpisodePicker"
+                  android:paddingStart="@dimen/padding_1x"
+                  android:textSize="@dimen/textSize_3x"
+                  android:text="Season &amp; episode"
+                  android:textColor="#a0a0a3"/>
+        <TextView android:id="@+id/seasonEpisodePicker"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@id/seasonEpisodeLabel"
+                  app:layout_constraintBottom_toTopOf="@id/episodeDescriptionLayout"
+                  android:textSize="@dimen/textSize_3x"
+                  android:text="@string/season_episode"
+                  android:paddingStart="@dimen/padding_1x"
+                  android:textColor="#ff758c"/>
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/episodeDescriptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/seasonEpisodePicker"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btnSaveEpisode"
+                android:theme="@style/Input"
+                app:errorEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/episodeDescriptionInput"
+                    style="@style/FullScreen.TextInputForms"
+                    android:hint="Episode description"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <i.kuster.ui.episodes.add.AddPhotoView
+            android:id="@+id/addPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/toolbarAddEpisode"
+            app:layout_constraintLeft_toRightOf="@id/leftGuide"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+    </i.kuster.ui.episodes.add.AddPhotoView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewPhoto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/toolbarAddEpisode"
+            app:layout_constraintLeft_toRightOf="@id/leftGuide"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:visibility="invisible">
+        <ImageView android:id="@+id/selectedPhoto"
+                   android:layout_width="200dp"
+                   android:layout_height="150dp"
+                   app:layout_constraintLeft_toLeftOf="parent"
+                   app:layout_constraintRight_toRightOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"/>
+        <TextView android:id="@+id/changePhotoLabel"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintTop_toBottomOf="@id/selectedPhoto"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  android:text="Change photo"
+                  android:textColor="#ff758c"
+                  android:textSize="@dimen/textSize_3x"
+                  android:layout_marginTop="@dimen/margin_1x"
+                  android:textStyle="bold"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+            android:id="@+id/btnSaveEpisode"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            app:layout_constraintTop_toBottomOf="@id/addPhotoInputs"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/leftGuide"
+            android:layout_marginBottom="@dimen/margin_2x"
+            android:textSize="@dimen/textSize_3x"
+            android:textColor="#ffffff"
+            android:background="@drawable/btn_selector"
+            android:enabled="false"
+            android:text="SAVE"/>
+
+    <ProgressBar
+            android:id="@+id/loadingScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/toolbarAddEpisode"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

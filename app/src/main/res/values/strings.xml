@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Shows-ikuster</string>
+    <string name="season_episode">S %1$s , E %2$s</string>
+    <string-array name="season_episode_get">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+    </string-array>
+
+</resources>

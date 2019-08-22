@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/clickShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView android:id="@+id/seasonEpisodeNumber"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              android:textColor="#ff758c"
+              android:textStyle="bold"
+              android:textSize="@dimen/textSize_3x"
+              android:paddingTop="@dimen/padding_1x"
+              android:paddingBottom="@dimen/padding_1x"/>
+    <TextView android:id="@+id/episodeName"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              android:textSize="@dimen/textSize_3x"
+              android:textColor="#505050"
+              app:layout_constraintLeft_toRightOf="@id/seasonEpisodeNumber"
+              app:layout_constraintRight_toRightOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              android:paddingTop="@dimen/padding_1x"
+              android:paddingBottom="@dimen/padding_1x"
+    android:layout_marginStart="@dimen/margin_3x"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
